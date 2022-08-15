@@ -3,6 +3,12 @@ variable "REGION" {
   type        = string
   default     = "eu-central-1"
 }
+
+
+##################################################
+#                 VPC
+##################################################
+
 variable "vpc_name" {
   description = "Name of VPC"
   type        = string
@@ -47,3 +53,27 @@ variable "vpc_tags" {
     Environment = "dev"
   }
 }
+
+##################################################
+#                 ec2
+##################################################
+
+variable "instance_count" {
+  description = "number of ec2 instances to run"
+  type        = number
+  default     = 1
+  }
+
+variable "ec2_ami" {
+  description = "The ami of the ec2 linux Instance"
+  type        = string
+  default     = "ami-0c5204531f799e0c6"
+  }
+
+variable "ec2_instance_type" {
+  description = "A list of instance types you can choose ur ec2 instance from"
+  type        = list(string)
+  default     = ["t2.micro"]
+  }
+
+
